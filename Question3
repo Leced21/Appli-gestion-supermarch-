@@ -1,0 +1,23 @@
+import Commande
+import Client
+import os
+def recup(ref):
+	with open ("C:/Users/cedri/Desktop/POO/commande.txt", "r+") as file:
+		line=file.readlines()
+		for line in file:
+			start=line.find("#")
+			end=line.find("&")# délimiteur du numero client dans commande
+			start2=line.find("@") # Délimiteur de la référence dans commande
+			end2=line.find("!")
+			if start != -1 and end != -1 and line[start2+1:end2] == ref:
+				with open ("C:/Users/cedri/Desktop/POO/client.txt", "r+") as fil:
+					line2=fil.readlines()
+					for line2 in fil:
+						start3=line2.find("#")# // Délimiteur du nom client dans client
+						end3=line2.find("&")
+						start4=line2.find("*")
+						end4=line2.find("#")# delimiteur du numero du client dans client
+						if start != -1 and end != -1 and line[start+1:end] == line[start4+1:end4]:
+							print(line[start3+1:end3])
+							with open ("C:/Users/cedri/Desktop/POO/liste_des_articles_d_un_client.txt", "w+") as fi:
+								fi.write("*" + "line2[start3:end3]" + "#" + "line[start2:end2] "+ "&")

@@ -1,0 +1,32 @@
+import Commande
+import Client
+import Livraison
+import os
+
+def list(m_nom):
+    with open("C:/Users/cedri/Desktop/POO/commande.txt", "r+") as file:
+        line=file.readlines()
+        for line in file:
+            start6=line.find("*")
+            end6=line.find("#")# délimiteur du numero de commande dans commande
+            start=line.find("#")
+            end=line.find("&") # délimiteur du numero client dans commande
+            start4=line.find("&")
+            end4=line.find("@")# délimiteur du statut de la commande dans commande
+            if start != -1 and end != -1 and line2[start3+1:end3]==m_nom:
+                with open("C:/Users/cedri/Desktop/POO/client.txt", "r+") as fil:
+                    line2=fil.readlines()
+                    for line2 in fil:
+                        start2=line2.find("*")
+                        end2=line2.find("#")# délimiteur du numero client dans client
+                        start3=line2.find("#")
+                        end3=line2.find("&")# délimiteur du nom dans client
+                        if start != -1 and end != -1 and line[start+1:end] == line2[start2+1:end2]:
+                            with open("C:/Users/cedri/Desktop/POO/livraison.txt", "r+") as fill:
+                                line3=fill.readlines()
+                                for line3 in fill:
+                                    start5=line3.find("*")
+                                    end5:line3.find("#") # délimiteur du numero de commande dans livraison
+                                    if start != -1 and end != -1 and line[start4+1:end4]=="en cours" and line[start6+1:end6]==line3[start5+1:end5]:
+                                        with open("C:/Users/cedri/Desktop/POO/liste_des_commandes_en_cours.txt", "w+") as fi:
+                                            fi.write("*"+"line2[start3+1:end3]"+"#"+"line[start6+1:end6]")

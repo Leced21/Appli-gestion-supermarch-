@@ -1,0 +1,21 @@
+import os
+
+def ravitail(ref):
+    with open("C:/Users/cedri/Desktop/POO/article.txt", "r+") as file:
+        lines=file.readlines()
+        for line in lines:
+            start3=line.find("*")
+            end3=line.find("#") # délimiteur de la reference dans article
+            start=line.find("#")
+            end=line.find("&") # délimiteur du libele dans article
+            start1=line.find("@")
+            end1=line.find("!")# délimiteur du stock dans article
+            start2=line.find("!")
+            end2=line.find("%")# délimiteur du seuil critique dans article
+            #print(line[start3+1:end3])
+            if start !=-1 and end !=-1 and ref == line[start3+1:end3] and line[start1+1:end1]>=line[start2+1:end2]:
+                print("l'article " + str(line[start+1:end]) + " doit être ravitailler")
+            else:
+                print("cet article est en quantité suffisante dans les stocks")
+
+ravitail("16")

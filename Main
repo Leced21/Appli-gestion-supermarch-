@@ -1,0 +1,110 @@
+from test import Test
+from Client import Client
+from Article import Article
+from Commande import Commande
+from Livraison import Livraison
+import os
+
+if __name__ == "__main__":
+# Ce programme a pour but de gérer les commandes et les livraisons d'un client d'un supermarché
+# Client
+    print("Votre action concerne:" "\n" "1." " Un client" "\n" "2." " Un article" "\n" "3." " Une commande " "\n" "4." " Une livraison")
+    a=int(input("Que souhaitez-vous faire? : "))
+    if a == 1:
+        print("Quelle est l'action que vous souhaitez effectuer?:" "\n" "1. Enregistrer un client" "\n" "2." " Rechercher un client " "\n" "3." " Modifier un client" "\n" "4." " Supprimer un client")
+        b=int(input("Que souhaitez-vous faire?:  "))
+        if b == 1:
+        #print("Entrer le nom, prenom, date de naissance et sexe du client exactement dans cet ordre s'il vous-plait")
+            c=input("entrer le nom  ")
+            d=input("entrer le prenom  ")
+            e=input("entrer la date de naissance  ")
+            f=input("entrer le sexe (M/F)  ")
+            client=Client(c,d,e,f)
+            client.enregistrerclient()
+        elif b == 2:
+            g=input("entrer le numero du client  ")
+            client=Client()
+            result=client.rechercherclient(g)
+            if result==1:
+                print("le client existe")
+        elif b == 3:
+            h=input("entrer le numero du client  ")
+            c=input("entrer le nouveau nom  ")
+            d=input("entrer le nouveau prenom  ")
+            e=input("entrer la nouvelle date de naissance  ")
+            f=input("entrer le sexe (M/F)  ")
+            client=Client()
+            result=client.modifierclient(h,c,d,e,f)
+        elif b == 4:
+            i=input("entrer le numero du client  ")
+            client=Client()
+            delete=client.suppclient(i)
+"""    # Article
+    elif a==2:
+        print("Quelle est l'action que vous souhaitez effectuer?:" "\n" "1. Enregistrer un article" "\n" "2." " Rechercher un article " "\n" "3." " Modifier un article" "\n" "4." " Supprimer un article")
+        b=int(input("Que souhaitez-vous faire?:"))
+        if b == 1:
+        #print("Entrer le nom, prenom, date de naissance et sexe du client exactement dans cet ordre s'il vous-plait")
+            c=input("entrer le nom de l'article")
+            d=input("entrer son prix unitaire")
+            e=input("entrer la quantité en stock")
+            f=input("entrer le seuil critique")
+            article=Article(c,d,e,f)
+        elif b == 2:
+            g=input("entrer la reference de l'article")
+            recherche=Article.rechercherarticle(g, "article.txt")
+        elif b == 3:
+            h=input("entrer la reference de l'article")
+            c=input("entrer le nom de l'article")
+            d=input("entrer son prix unitaire")
+            e=input("entrer la quantité en stock")
+            f=input("entrer le seuil critique")
+            modifier=Article.modifierarticle(h,c,d,e,f)
+        elif b == 4:
+            i=input("entrer la reference de l'article")
+            delete=Article.supparticle(i)
+    # Commande
+    elif a==3:
+        print("Quelle est l'action que vous souhaitez effectuer?:" "\n" "1. Enregistrer une commande" "\n" "2." " Rechercher une commande " "\n" "3." " Modifier une commande" "\n" "4." " Supprimer une commande")
+        b=int(input("Que souhaitez-vous faire?:"))
+        if b == 1:
+        #print("Entrer le nom, prenom, date de naissance et sexe du client exactement dans cet ordre s'il vous-plait")
+            c=input("entrer le numero du client")
+            d=input("entrer l'état de la livraison(livrée/en cours)")
+            e=input("entrer la reference de l'article")
+            f=input("entrer la quantité commandée")
+            commande=Commande(c,d,e,f)
+        elif b == 2:
+            g=input("entrer le numero de la commande")
+            recherche=Commande.recherchercommande(g, "commande.txt")
+        elif b == 3:
+            h=input("entrer le numero de la commande")
+            c=input("entrer le numero du client")
+            d=input("entrer l'état de la livraison(livrée/en cours)")
+            e=input("entrer la reference de l'article")
+            f=input("entrer la quantité commandée")
+            modifier=Commande.modifiercommande(h,c,d,e,f)
+        elif b == 4:
+            i=input("entrer le numero de la commande")
+            delete=Commande.suppcommande(i)
+    # Livraison
+    elif a==4:
+        print("Quelle est l'action que vous souhaitez effectuer?:" "\n" "1. Enregistrer une livraison" "\n" "2." " Rechercher une livraison " "\n" "3." " Modifier une livraison" "\n" "4." " Supprimer une livraison")
+        b=int(input("Que souhaitez-vous faire?:"))
+        if b == 1:
+        #print("Entrer le nom, prenom, date de naissance et sexe du client exactement dans cet ordre s'il vous-plait")
+            c=input("entrer le numero de la commande")
+            d=input("entrer la quantité à livrer")
+            e=input("entrer le numero du client")
+            livraison=Livraison(c,d,e)
+        elif b == 2:
+            g=input("entrer le numero de la commande")
+            recherche=Livraison.rechercherlivraison(g, "livraison.txt")
+        elif b == 3:
+            h=input("entrer le numero de la commande")
+            c=input("entrer la quantité à livrer")
+            d=input("entrer le numero du client")
+            modifier=Livraison.modifierlivraison(h,c,d)
+        elif b == 4:
+            i=input("entrer le numero de la commande")
+            delete=Livraison.supplivraison(i)"""

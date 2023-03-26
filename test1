@@ -1,0 +1,3 @@
+from test import Test
+b=input("entrer le numero du client  ")
+result=Test.rechercherclient(b)

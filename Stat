@@ -1,0 +1,17 @@
+import os
+def stat(ref):
+    i=0
+    q=0
+    with open ("C:/Users/cedri/Desktop/POO/commande.txt", "r+") as file:
+        lines=file.readlines()
+        for line in lines:
+            start=line.find("@")
+            end=line.find("!") # delimiteur reference dans commande
+            start2=line.find("!")
+            end2=line.find("%") # délimiteur de la quantité vendue
+            if start !=-1 and end !=-1 and ref == line[start+1:end]:
+                i+=1
+                q=q+int(line[start2+1:end2])
+        print("le nombre de commande est " + str(i) +" et la quantité vendue est "+ str(q))
+
+stat("47")

@@ -1,0 +1,20 @@
+import os
+import numpy as np
+import sounddevice as sd
+
+# Fréquence de l'onde sonore
+freq = 440  # en Hertz
+
+# Durée du signal sonore (en secondes)
+duration = 5  # en secondes
+
+# Amplitude du signal sonore
+amplitude = 0.5
+
+# Création du signal sonore
+time = np.linspace(0, duration, int(duration * 44100), False)
+signal = amplitude * np.sin(2 * np.pi * freq * time)
+
+# Lecture du signal sonore
+sd.play(signal, 44100)
+sd.wait()

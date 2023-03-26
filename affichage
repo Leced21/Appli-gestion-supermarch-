@@ -1,0 +1,16 @@
+import os
+
+def affichage(ref):
+    with open ("C:/Users/cedri/Desktop/POO/article.txt", "r+") as file:
+        lines=file.readlines()
+        for line in lines:
+            start1=line.find("*")
+            end1=line.find("#") # délimiteur de la reference dans article
+            start=line.find("#")
+            end=line.find("&") # délimiteur du libele dans article
+            start2=line.find("&")
+            end2=line.find("@") # délimiteur du prix unitaire dans article
+            if start !=-1 and end !=-1 and ref == line[start1+1:end1]:
+                print("le nom de l'article est "+ str(line[start+1:end])+" et son prix unitaire est "+ str(line[start2+1:end2]))
+
+affichage("47")
